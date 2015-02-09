@@ -14,6 +14,7 @@
  */
 package grails.plugin.springsecurity.ui
 
+import grails.converters.JSON
 import grails.plugin.springsecurity.SpringSecurityUtils
 import grails.plugin.springsecurity.authentication.dao.NullSaltSource
 import groovy.text.SimpleTemplateEngine
@@ -40,42 +41,61 @@ class RegisterController extends AbstractS2UiController {
 		[command: new RegisterCommand(copy)]
 	}
 
-	def register(RegisterCommand command) {
+    def ajaxRegister(RegisterCommand command) {
+        return doRegister(command, true)
+    }
 
-		if (command.hasErrors()) {
-			render view: 'index', model: [command: command]
-			return
-		}
+    def register(RegisterCommand command) {
+        return doRegister(command, false)
+    }
 
-		String salt = saltSource instanceof NullSaltSource ? null : command.username
-		def user = lookupUserClass().newInstance(email: command.email, username: command.username,
-				accountLocked: true, enabled: true)
+    def doRegister(RegisterCommand command, Boolean isAjax) {
 
-		RegistrationCode registrationCode = springSecurityUiService.register(user, command.password, salt)
-		if (registrationCode == null || registrationCode.hasErrors()) {
-			// null means problem creating the user
-			flash.error = message(code: 'spring.security.ui.register.miscError')
-			flash.chainedParams = params
-			redirect action: 'index'
-			return
-		}
+        if (command.hasErrors()) {
+            if (!isAjax)
+                render view: 'index', model: [command: command]
+            else
+                render model: [hasErrors: true, errors: command.errors] as JSON
+            return
+        }
 
-		String url = generateLink('verifyRegistration', [t: registrationCode.token])
+        String salt = saltSource instanceof NullSaltSource ? null : command.username
+        def user = lookupUserClass().newInstance(email: command.email, username: command.username,
+                accountLocked: true, enabled: true)
 
-		def conf = SpringSecurityUtils.securityConfig
-		def body = conf.ui.register.emailBody
-		if (body.contains('$')) {
-			body = evaluate(body, [user: user, url: url])
-		}
-		mailService.sendMail {
-			to command.email
-			from conf.ui.register.emailFrom
-			subject conf.ui.register.emailSubject
-			html body.toString()
-		}
+        RegistrationCode registrationCode = springSecurityUiService.register(user, command.password, salt)
+        if (registrationCode == null || registrationCode.hasErrors()) {
+            // TODO: Ajaxify this
+            // null means problem creating the user
+            flash.error = message(code: 'spring.security.ui.register.miscError')
+            flash.chainedParams = params
+            if (!isAjax)
+                redirect action: 'index'
+            else
+                return params as JSON
 
-		render view: 'index', model: [emailSent: true]
-	}
+            return
+        }
+
+        String url = generateLink('verifyRegistration', [t: registrationCode.token])
+
+        def conf = SpringSecurityUtils.securityConfig
+        def body = conf.ui.register.emailBody
+        if (body.contains('$')) {
+            body = evaluate(body, [user: user, url: url])
+        }
+        mailService.sendMail {
+            to command.email
+            from conf.ui.register.emailFrom
+            subject conf.ui.register.emailSubject
+            html body.toString()
+        }
+
+        if (!isAjax)
+            render view: 'index', model: [emailSent: true]
+        else
+            render model: [hasErrors: false, emailSent: true] as JSON
+    }
 
 	def verifyRegistration() {
 
