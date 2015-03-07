@@ -19,7 +19,7 @@ import grails.plugin.springsecurity.SpringSecurityUtils
  */
 class SpringSecurityUiGrailsPlugin {
 
-	String version = '1.0-RC2'
+	String version = '1.0-RC2.1'
 	String grailsVersion = '2.0.0 > *'
 	List loadAfter = ['springSecurityCore']
 	List pluginExcludes = [
@@ -30,16 +30,16 @@ class SpringSecurityUiGrailsPlugin {
 		'lib/**'
 	]
 
-	String author = 'Burt Beckwith'
+	String author = 'Burt Beckwith, Isaka Traore'
 	String authorEmail = 'burt@burtbeckwith.com'
 	String title = 'Spring Security UI'
 	String description = 'User interface extensions for the Spring Security plugin'
 	String documentation = 'http://grails-plugins.github.io/grails-spring-security-ui/'
 
 	String license = 'APACHE'
-	def organization = [name: 'SpringSource', url: 'http://www.springsource.org/']
+	def organization = [name: 'Mimozar', url: 'http://www.mimozar.com/']
 	def issueManagement = [system: 'JIRA', url: 'http://jira.grails.org/browse/GPSPRINGSECURITYUI']
-	def scm = [url: 'https://github.com/grails-plugins/grails-spring-security-ui/']
+	def scm = [url: 'https://github.com/itraor/grails-spring-security-ui/']
 
 	def doWithSpring = {
 

@@ -4,11 +4,11 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/grails-app/views" relative="/" />
-          <root url="file://$MODULE_DIR$/target/plugins/mail-1.0.5/grails-app/views" relative="/" />
-          <root url="file://$MODULE_DIR$/target/plugins/jquery-ui-1.10.3/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/plugins/jquery-1.11.1/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/plugins/famfamfam-1.0.1/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/target/plugins/mail-1.0.5/grails-app/views" relative="/" />
+          <root url="file://$MODULE_DIR$/target/plugins/jquery-ui-1.10.3/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -48,20 +48,20 @@
       <sourceFolder url="file://$MODULE_DIR$/target/plugins/release-3.0.1/src/groovy" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/target/plugins/rest-client-builder-2.0.1" />
-    <content url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC1">
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC1/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC1/grails-app/domain" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC2">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC2/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC2/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC2/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC2/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-acl-2.0-RC2/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3">
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC3/grails-app/taglib" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4">
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/plugins/spring-security-core-2.0-RC4/grails-app/taglib" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/target/plugins/webxml-1.4.1">
       <sourceFolder url="file://$MODULE_DIR$/target/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
@@ -88,7 +88,7 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm/3.1.0.RELEASE/grails-datastore-gorm-3.1.0.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-core/3.1.0.RELEASE/grails-datastore-core-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-acl/3.2.0.RC1/spring-security-acl-3.2.0.RC1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-acl/3.2.3.RELEASE/spring-security-acl-3.2.3.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/javax/mail/javax.mail-api/1.5.1/javax.mail-api-1.5.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.3.RELEASE/spring-security-web-3.2.3.RELEASE.jar!/" />
